@@ -1,0 +1,59 @@
+---
+import type { User } from "@components/Chat.astro";
+import Chat from "@components/Chat.astro";
+import { users } from "@data/users";
+import "@styles/global.css";
+
+import imageA from "@images/avatars/a.jpg";
+import imageB from "@images/avatars/b.jpg";
+import imageC from "@images/avatars/c.jpg";
+import imageD from "@images/avatars/d.jpg";
+import imageE from "@images/avatars/e.jpg";
+import imageF from "@images/avatars/f.jpg";
+import imageG from "@images/avatars/g.jpg";
+import imageH from "@images/avatars/h.jpg";
+import imageI from "@images/avatars/i.jpg";
+import imageTrey from "@images/avatars/trey.jpg";
+
+function getUsersWithImages(users: any[]): User[] {
+  const map: Record<string, ImageMetadata> = {
+    1: imageA,
+    2: imageB,
+    3: imageC,
+    4: imageD,
+    5: imageE,
+    6: imageF,
+    7: imageG,
+    8: imageH,
+    9: imageI,
+    10: imageTrey,
+  };
+
+  return users.map((user) => ({
+    ...user,
+    image: map[user.id],
+  }));
+}
+
+const usersWithImages = getUsersWithImages(users);
+---
+
+<ul class="chats-list">
+  {
+    usersWithImages.map((user) => (
+      <li>
+        <Chat user={user} />
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .chats-list {
+    list-style-type: none;
+  }
+  .chats-list > li {
+    border-bottom: 1px solid var(--border);
+    padding: 1rem;
+  }
+</style>

@@ -1,0 +1,133 @@
+---
+import ChatsList from "@components/ChatsList.astro";
+import "@styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Chat App</title>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <div class="user-avatar">
+          <img src="" alt="User Avatar" />
+        </div>
+        <div class="title">
+          <span>Trey Granderson</span>
+          <span>Front End Engineer</span>
+        </div>
+      </div>
+    </header>
+
+    <aside>
+      <div class="search">
+        <input placeholder="Search..." />
+      </div>
+      <div class="chats">
+        <ChatsList />
+      </div>
+    </aside>
+
+    <main>Message Pane</main>
+
+    <footer>Input Field</footer>
+  </body>
+
+  <style is:global>
+    html,
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+    }
+
+    body {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-areas:
+        "sidebar sidebar sidebar header header header header header header"
+        "sidebar sidebar sidebar main main main main main main"
+        "sidebar sidebar sidebar footer footer footer footer footer footer";
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+      min-height: 100dvh;
+    }
+
+    ul {
+      padding: 0;
+    }
+
+    /* Header */
+    header {
+      grid-area: header;
+      display: grid;
+      grid-template-columns: subgrid;
+      height: var(--layout-header-height);
+      border-bottom: 1px solid var(--border);
+    }
+    header .wrapper {
+      display: flex;
+      grid-column: 1 / -1;
+      margin: 1rem;
+    }
+    header .user-avatar {
+      height: 100%;
+      aspect-ratio: 1;
+      border-radius: 100%;
+    }
+    header .title {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Aside */
+    aside {
+      grid-area: sidebar;
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-template-rows: subgrid;
+      border-right: 1px solid var(--border);
+    }
+    aside .search {
+      display: flex;
+      align-items: center;
+      height: var(--layout-header-height);
+      grid-column: 1 / -1;
+      border-bottom: 1px solid var(--border);
+    }
+    aside .search input {
+      justify-self: center;
+      align-self: stretch;
+      width: 100%;
+      margin: 1rem;
+    }
+    aside > .chats {
+      display: grid;
+      grid-column: 1 / -1;
+      grid-row: 2 / -1;
+      place-self: stretch;
+      justify-items: stretch;
+    }
+
+    /* Main */
+    main {
+      grid-area: main;
+      display: grid;
+      grid-template-columns: subgrid;
+    }
+
+    /* Footer */
+    footer {
+      grid-area: footer;
+      display: grid;
+      grid-template-columns: subgrid;
+      border-top: 1px solid var(--border);
+      height: var(--layout-footer-height);
+    }
+  </style>
+</html>

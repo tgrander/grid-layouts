@@ -1,0 +1,37 @@
+---
+import "@styles/Chat.css";
+import { Image } from "astro:assets";
+
+export interface User {
+  id: number;
+  name: string;
+  title: string;
+  online: boolean;
+  image: ImageMetadata;
+}
+
+interface Props {
+  user: User;
+}
+
+const { user } = Astro.props;
+---
+
+<div class="chat">
+  <div class="avatar">
+    <Image
+      src={user.image}
+      alt="descriptive text"
+      width="60"
+      height="60"
+      decoding="async"
+      loading="lazy"
+      class="img"
+    />
+  </div>
+
+  <div>
+    <span class="name">{user.name}</span>
+    <span class="title">{user.title}</span>
+  </div>
+</div>
