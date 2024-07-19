@@ -41,7 +41,7 @@ const usersWithImages = getUsersWithImages(users);
 <ul class="chats-list">
   {
     usersWithImages.map((user) => (
-      <li>
+      <li data-id={user.id}>
         <Chat user={user} />
       </li>
     ))
@@ -52,8 +52,12 @@ const usersWithImages = getUsersWithImages(users);
   .chats-list {
     list-style-type: none;
   }
-  .chats-list > li {
+  li {
     border-bottom: 1px solid var(--border);
     padding: 1rem;
+    cursor: pointer;
+  }
+  li:hover {
+    background-color: lightskyblue;
   }
 </style>
