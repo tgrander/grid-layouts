@@ -1,5 +1,4 @@
 ---
-import "@styles/Chat.css";
 import { Image } from "astro:assets";
 
 export interface User {
@@ -35,3 +34,21 @@ const { user } = Astro.props;
     <span class="title">{user.title}</span>
   </div>
 </div>
+
+<style>
+  .chat {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1rem;
+  }
+
+  .chat > .avatar {
+    aspect-ratio: 1;
+    height: 100%;
+  }
+
+  .chat img {
+    object-fit: cover;
+    border-radius: 100%;
+  }
+</style>
