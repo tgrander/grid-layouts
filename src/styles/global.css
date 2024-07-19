@@ -5,7 +5,65 @@
   --sidebar-width-min: 280px;
   --border: #101720;
   --input-padding: 1rem;
+  --foreground: #2a2829;
 
-  --primary: #253b9a;
-  --secondary: #96b4de;
+  /* Sky Blue */
+  --primary-light: rgb(245, 248, 252);
+  --primary-light-hover: rgb(239, 244, 250);
+  --primary-light-active: rgb(223, 232, 245);
+  --primary: rgb(151, 180, 222);
+  --primary-hover: rgb(136, 162, 200);
+  --primary-active: rgb(121, 144, 178);
+  --primary-dark: rgb(113, 135, 167);
+  --primary-dark-hover: rgb(91, 108, 133);
+  --primary-dark-active: rgb(68, 81, 100);
+  --primary-darker: rgb(53, 63, 78);
+
+  /* Pastel Gray */
+  --secondary-light: rgb(252, 250, 249);
+  --secondary-light-hover: rgb(250, 248, 245);
+  --secondary-light-active: rgb(244, 240, 235);
+  --secondary: rgb(220, 208, 190);
+  --secondary-hover: rgb(198, 187, 171);
+  --secondary-active: rgb(176, 166, 152);
+  --secondary-dark: rgb(165, 156, 143);
+  --secondary-dark-hover: rgb(132, 125, 114);
+  --secondary-dark-active: rgb(99, 94, 85);
+  --secondary-darker: rgb(77, 73, 67);
+
+  /* Blue */
+  --accent-light: rgb(233, 235, 245);
+  --accent-light-hover: rgb(222, 225, 240);
+  --accent-light-active: rgb(188, 194, 223);
+  --accent: rgb(38, 58, 153);
+  --accent-hover: rgb(34, 52, 138);
+  --accent-active: rgb(30, 46, 122);
+  --accent-dark: rgb(29, 44, 115);
+  --accent-dark-hover: rgb(23, 35, 92);
+  --accent-dark-active: rgb(17, 26, 69);
+  --accent-darker: rgb(13, 20, 54);
+
+  /* Charleston Green */
+  --foreground-light: rgb(234, 234, 234);
+  --foreground-light-hover: rgb(223, 223, 223);
+  --foreground-light-active: rgb(189, 188, 189);
+  --foreground: rgb(42, 40, 41);
+  --foreground-hover: rgb(38, 36, 37);
+  --foreground-active: rgb(34, 32, 33);
+  --foreground-dark: rgb(32, 30, 31);
+  --foreground-dark-hover: rgb(25, 24, 25);
+  --foreground-dark-active: rgb(19, 18, 18);
+  --foreground-darker: rgb(15, 14, 14);
+
+  /* Alabaster */
+  --bg-light: rgb(254, 253, 253);
+  --bg-light-hover: rgb(253, 253, 252);
+  --bg-light-active: rgb(251, 250, 248);
+  --bg: rgb(243, 239, 234);
+  --bg-hover: rgb(219, 215, 211);
+  --bg-active: rgb(194, 191, 187);
+  --bg-dark: rgb(182, 179, 176);
+  --bg-dark-hover: rgb(146, 143, 140);
+  --bg-dark-active: rgb(109, 108, 105);
+  --bg-darker: rgb(85, 84, 82);
 }

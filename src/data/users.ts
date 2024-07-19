@@ -19,14 +19,14 @@ export const users: UserWithoutImage[] = [
   },
   {
     id: 2,
-    name: "Bob Smith",
+    name: "Carol White",
     title: "Product Manager",
     online: false,
     imagePath: getImagePath("c"),
   },
   {
     id: 3,
-    name: "Carol White",
+    name: "Bob Smith",
     title: "UX Designer",
     online: true,
     imagePath: getImagePath("b"),
