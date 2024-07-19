@@ -1,8 +1,6 @@
 ---
 import ChatsList from "@components/ChatsList.astro";
-import userImage from "@images/avatars/trey.jpg";
 import "@styles/global.css";
-import { Image } from "astro:assets";
 ---
 
 <html lang="en">
@@ -13,25 +11,7 @@ import { Image } from "astro:assets";
     <title>Chat App</title>
   </head>
   <body>
-    <header>
-      <div class="wrapper">
-        <div class="user-avatar">
-          <Image
-            src={userImage}
-            alt="User Avatar"
-            width="512"
-            height="512"
-            decoding="async"
-            loading="lazy"
-            quality={100}
-          />
-        </div>
-        <div class="title">
-          <span>Trey Granderson</span>
-          <span>Front End Engineer</span>
-        </div>
-      </div>
-    </header>
+    <header id="header"></header>
 
     <aside>
       <div class="search">
@@ -55,6 +35,8 @@ import { Image } from "astro:assets";
       </form>
     </footer>
   </body>
+
+  <script src="../scripts/chatService.ts"></script>
 
   <style is:global>
     html,

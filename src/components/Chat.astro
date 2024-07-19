@@ -1,13 +1,6 @@
 ---
+import type { User } from "@/types/user";
 import { Image } from "astro:assets";
-
-export interface User {
-  id: number;
-  name: string;
-  title: string;
-  online: boolean;
-  image: ImageMetadata;
-}
 
 interface Props {
   user: User;
