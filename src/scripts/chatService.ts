@@ -7,7 +7,7 @@ interface UserWithoutImage extends Omit<User, "image"> {
   element: HTMLElement;
 }
 
-const isSelected = "isSelected";
+const isSelected = "selected";
 
 export class ChatService {
   users!: Map<number, UserWithoutImage>;
@@ -31,11 +31,6 @@ export class ChatService {
     event.preventDefault();
     const target = event.target as HTMLElement;
     const listItem = target.closest("li[data-id]") as HTMLLIElement | null;
-
-    console.log("CLICKED");
-    console.log("target.tagName", target.tagName);
-    console.log("target.dataset.id :>> ", target.dataset.id);
-    console.log("target :>> ", target);
 
     if (listItem) {
       const userId = parseInt(listItem.dataset.id ?? "", 10);
@@ -85,9 +80,9 @@ export class ChatService {
             loading="lazy"
           />
         </div>
-        <div class="title">
-          <span>${this.selectedUser.name}</span>
-          <span>${this.selectedUser.title}</span>
+        <div class="meta">
+          <span class="name">${this.selectedUser.name}</span>
+          <span class="title">${this.selectedUser.title}</span>
         </div>
       </div>
     `;

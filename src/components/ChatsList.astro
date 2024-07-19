@@ -58,6 +58,10 @@ const usersWithImages = getUsersWithImages(users);
     cursor: pointer;
   }
   li:hover {
-    background-color: lightskyblue;
+    background-color: var(--secondary);
+  }
+  li.selected {
+    background-color: var(--primary);
+    color: white;
   }
 </style>
