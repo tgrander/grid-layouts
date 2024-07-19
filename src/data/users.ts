@@ -2,10 +2,6 @@ import type { User } from "@/types/user";
 
 type UserWithoutImage = Omit<User, "image">;
 
-function getImagePath(name: string) {
-  return `/src/images/avatars/${name}.jpg`;
-}
-
 export const users: UserWithoutImage[] = [
   {
     id: 10,
@@ -78,3 +74,7 @@ export const users: UserWithoutImage[] = [
     imagePath: getImagePath("i"),
   },
 ];
+
+function getImagePath(name: string) {
+  return `/src/images/avatars/${name}.jpg`;
+}
