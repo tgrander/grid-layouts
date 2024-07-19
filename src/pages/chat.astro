@@ -1,6 +1,8 @@
 ---
 import ChatsList from "@components/ChatsList.astro";
+import userImage from "@images/avatars/trey.jpg";
 import "@styles/global.css";
+import { Image } from "astro:assets";
 ---
 
 <html lang="en">
@@ -14,7 +16,15 @@ import "@styles/global.css";
     <header>
       <div class="wrapper">
         <div class="user-avatar">
-          <img src="" alt="User Avatar" />
+          <Image
+            src={userImage}
+            alt="User Avatar"
+            width="512"
+            height="512"
+            decoding="async"
+            loading="lazy"
+            quality={100}
+          />
         </div>
         <div class="title">
           <span>Trey Granderson</span>
@@ -34,7 +44,16 @@ import "@styles/global.css";
 
     <main>Message Pane</main>
 
-    <footer>Input Field</footer>
+    <footer>
+      <form id="chat-form">
+        <input
+          id="chat-form__input"
+          type="text"
+          placeholder="Type a message..."
+        />
+        <button>Send</button>
+      </form>
+    </footer>
   </body>
 
   <style is:global>
@@ -79,6 +98,12 @@ import "@styles/global.css";
       height: 100%;
       aspect-ratio: 1;
       border-radius: 100%;
+    }
+    header img {
+      object-fit: cover;
+      border-radius: 100%;
+      height: 60px;
+      width: 60px;
     }
     header .title {
       display: flex;
@@ -129,6 +154,12 @@ import "@styles/global.css";
       grid-template-columns: subgrid;
       border-top: 1px solid var(--border);
       height: var(--layout-footer-height);
+    }
+
+    footer form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      margin: 1rem;
     }
   </style>
 </html>
