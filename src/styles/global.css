@@ -1,5 +1,8 @@
 :root {
   --layout-header-height: 80px;
-  --layout-footer-height: 60px;
+  --layout-footer-height: 80px;
+  --sidebar-width: 30%;
+  --sidebar-width-min: 280px;
   --border: #101720;
+  --input-padding: 1rem;
 }
